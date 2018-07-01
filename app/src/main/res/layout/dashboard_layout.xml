@@ -12,13 +12,123 @@
         android:background="@color/black"
 
         android:contentDescription="Logo"/>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:padding="40dp">
-        
-    </LinearLayout>
+        android:scrollbars="none"
+        android:gravity="center">
+
+        <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardElevation="35dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                app:cardBackgroundColor="#fff"
+                android:layout_margin="10dp"
+                android:layout_column="1"
+                >
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardElevation="35dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                app:cardBackgroundColor="#fff"
+                android:layout_margin="10dp"
+                android:layout_column="2"
+                >
+
+                hh
+            </android.support.v7.widget.CardView>
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardElevation="35dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                app:cardBackgroundColor="#fff"
+                android:layout_margin="10dp"
+                android:layout_column="1"
+                >
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardElevation="35dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                app:cardBackgroundColor="#fff"
+                android:layout_margin="10dp"
+                android:layout_column="2"
+                >
+
+                hh
+            </android.support.v7.widget.CardView>
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardElevation="35dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                app:cardBackgroundColor="#fff"
+                android:layout_margin="10dp"
+                android:layout_column="1"
+                >
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardElevation="35dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                app:cardBackgroundColor="#fff"
+                android:layout_margin="10dp"
+                android:layout_column="2"
+                >
+
+                hh
+            </android.support.v7.widget.CardView>
+        </TableRow>
+    </TableLayout>
+    </ScrollView>
 </LinearLayout>
