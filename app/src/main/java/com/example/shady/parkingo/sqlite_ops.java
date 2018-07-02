@@ -29,7 +29,10 @@ public class sqlite_ops extends SQLiteOpenHelper{
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
-        sqLiteDatabase.execSQL("drop table if exists admin;drop table if exists slots;drop table if exists records;");
+        sqLiteDatabase.execSQL("drop table if exists admin ; ");
+        sqLiteDatabase.execSQL("drop table if exists slots;");
+        sqLiteDatabase.execSQL("drop table if exists records;");
+
         onCreate(sqLiteDatabase);
     }
 
