@@ -17,7 +17,7 @@ public class sqlite_ops extends SQLiteOpenHelper{
 
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         Log.d(TAG, "sqlite_ops:database created ");
-       
+
     }
     public void onCreate(SQLiteDatabase db){
         db.execSQL("create table admin(username varchar unique,password varchar)");
