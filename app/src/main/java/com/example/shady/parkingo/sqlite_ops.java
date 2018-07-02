@@ -17,13 +17,13 @@ public class sqlite_ops extends SQLiteOpenHelper{
 
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         Log.d(TAG, "sqlite_ops:database created ");
+        insert_login_details();
     }
-
     public void onCreate(SQLiteDatabase db){
         db.execSQL("create table admin(username varchar unique,password varchar)");
         db.execSQL("create table slots(id integer primary key autoincrement ,slot varchar unique,status int,category text)");
         db.execSQL("create table records(tkt_no integer  primary key autoincrement,name varchar,mobile int,slot varchar,check_in timestamp,check_out timestamp,isempty int)");
-        insert_login_details();
+
     }
 
     @Override
@@ -34,7 +34,7 @@ public class sqlite_ops extends SQLiteOpenHelper{
     }
 
     public void insert_login_details(){
-        SQLiteDatabase db= this.getWritableDatabase();
+        SQLiteDatabase db=this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("username","shady");
         values.put("password","shady");
@@ -57,7 +57,7 @@ public class sqlite_ops extends SQLiteOpenHelper{
             if (pass.equals(li.getPass())) {
                 return true;
             } else {
-                //Log.d(TAG, "fetch_login_details: not equals "+pass);
+                Log.d(TAG, "fetch_login_details: not equals "+pass);
                 return false;
             }
             }
@@ -66,12 +66,12 @@ public class sqlite_ops extends SQLiteOpenHelper{
             }
         }
         else {
-            //Log.d(TAG, "fetch_login_details: nothing selected");
+            Log.d(TAG, "fetch_login_details: nothing selected");
             return false;
         }
 
 
-            
+
 
     }
 }
