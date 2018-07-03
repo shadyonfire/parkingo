@@ -12,123 +12,305 @@
         android:background="@color/black"
 
         android:contentDescription="Logo"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:gravity="center">
+        android:gravity="center"
+        android:scrollbars="none">
 
         <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:scrollbarAlwaysDrawVerticalTrack="true">
-
-        <TableRow
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <android.support.v7.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:cardElevation="35dp"
-                android:paddingTop="0dp"
-                android:paddingBottom="10dp"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                app:cardBackgroundColor="#fff"
-                android:layout_margin="10dp"
-                android:layout_column="1"
-                >
+            android:gravity="center_vertical"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
 
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:cardElevation="35dp"
-                android:paddingTop="0dp"
-                android:paddingBottom="10dp"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                app:cardBackgroundColor="#fff"
-                android:layout_margin="10dp"
-                android:layout_column="2"
-                >
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                hh
-            </android.support.v7.widget.CardView>
-        </TableRow>
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <android.support.v7.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:cardElevation="35dp"
-                android:paddingTop="0dp"
-                android:paddingBottom="10dp"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                app:cardBackgroundColor="#fff"
-                android:layout_margin="10dp"
-                android:layout_column="1"
-                >
+                <android.support.v7.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_column="1"
+                    android:layout_margin="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="0dp"
+                    app:cardBackgroundColor="#fff"
+                    app:cardElevation="35dp"
+                    android:id="@+id/check_in"
+                    android:onClick="openNew"
+                    >
 
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:cardElevation="35dp"
-                android:paddingTop="0dp"
-                android:paddingBottom="10dp"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                app:cardBackgroundColor="#fff"
-                android:layout_margin="10dp"
-                android:layout_column="2"
-                >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                hh
-            </android.support.v7.widget.CardView>
-        </TableRow>
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <android.support.v7.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:cardElevation="35dp"
-                android:paddingTop="0dp"
-                android:paddingBottom="10dp"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                app:cardBackgroundColor="#fff"
-                android:layout_margin="10dp"
-                android:layout_column="1"
-                >
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/car"
 
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:cardElevation="35dp"
-                android:paddingTop="0dp"
-                android:paddingBottom="10dp"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                app:cardBackgroundColor="#fff"
-                android:layout_margin="10dp"
-                android:layout_column="2"
-                >
+                            android:contentDescription="Car logo"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Check in"
+                            android:textSize="25sp"
+                            android:textAllCaps="false"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:fontFamily="casual"/>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
 
-                hh
-            </android.support.v7.widget.CardView>
-        </TableRow>
-    </TableLayout>
+                <android.support.v7.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_column="2"
+                    android:layout_margin="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="0dp"
+                    app:cardBackgroundColor="#fff"
+                    app:cardElevation="35dp"
+                    android:id="@+id/availability"
+                    android:onClick="openNew"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/availabilty"
+
+                            android:contentDescription="Availability logo"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Availability"
+                            android:textSize="25sp"
+                            android:textAllCaps="false"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:fontFamily="casual"/>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_column="1"
+                    android:layout_margin="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="0dp"
+                    app:cardBackgroundColor="#fff"
+                    app:cardElevation="35dp"
+                    android:id="@+id/reprint"
+                    android:onClick="openNew"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/reprint"
+
+                            android:contentDescription="reprint logo"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Reprint Ticket"
+                            android:textSize="25sp"
+                            android:textAllCaps="false"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:fontFamily="casual"/>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_column="2"
+                    android:layout_margin="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="0dp"
+                    app:cardBackgroundColor="#fff"
+                    app:cardElevation="35dp"
+                    android:id="@+id/vehicle"
+                    android:onClick="openNew"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/car"
+
+                            android:contentDescription="Availability logo"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Vehicle Category"
+                            android:textSize="25sp"
+                            android:textAllCaps="false"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:fontFamily="casual"/>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_column="1"
+                    android:layout_margin="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="0dp"
+                    app:cardBackgroundColor="#fff"
+                    app:cardElevation="35dp"
+                    android:id="@+id/checkout"
+                    android:onClick="openNew"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/checkout"
+
+                            android:contentDescription="Checkout logo"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Check Out"
+                            android:textSize="25sp"
+                            android:textAllCaps="false"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:fontFamily="casual"/>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_column="2"
+                    android:layout_margin="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="0dp"
+                    app:cardBackgroundColor="#fff"
+                    app:cardElevation="35dp"
+                    android:id="@+id/search"
+                    android:onClick="openNew"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/search"
+
+                            android:contentDescription="Availability logo"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Search"
+                            android:textSize="25sp"
+                            android:textAllCaps="false"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:fontFamily="casual"/>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </TableRow>
+            <TableRow android:gravity="center">
+                <LinearLayout
+                    android:layout_column="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                   >
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#0fd"
+                        android:gravity="center"
+                        android:text="Logout"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:id="@+id/logout"
+                        android:onClick="openNew"/>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+
     </ScrollView>
 </LinearLayout>
