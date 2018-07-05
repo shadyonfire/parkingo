@@ -1,9 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".category_wise_availability">
 
-</android.support.constraint.ConstraintLayout>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#7b7777"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:src="@drawable/logo"
+        android:background="@color/black"
+
+        android:contentDescription="Logo"/>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Free Slots"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:background="#000"
+            />
+        <RadioGroup
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="car"
+                android:onClick="getAvailability"
+                android:id="@+id/car"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bike"
+                android:onClick="getAvailability"
+                android:id="@+id/bike"
+                />
+        </RadioGroup>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lv"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+

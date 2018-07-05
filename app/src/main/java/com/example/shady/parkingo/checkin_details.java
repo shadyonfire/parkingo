@@ -3,20 +3,35 @@ package com.example.shady.parkingo;
 public class checkin_details {
     private String name;
     private String vehicle_no;
-    private int mobile;
+    private long mobile;
     private String slot;
-    public void checkin_details(String name, String vehicle_no,int mobile,String slot){
-        this.name=name;
-        this.vehicle_no=vehicle_no;
-        this.mobile=mobile;
-        this.slot=slot;
+    private int ticket;
+
+    public void setTicket(int ticket) {
+        this.ticket = ticket;
+    }
+
+    public void setMobile(long mobile) {
+        this.mobile = mobile;
+    }
+
+    public void setSlot(String slot) {
+        this.slot = slot;
+    }
+
+    public void setVehicle_no(String vehicle_no) {
+        this.vehicle_no = vehicle_no;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getMobile() {
+    public long getMobile() {
         return mobile;
     }
 
@@ -26,5 +41,9 @@ public class checkin_details {
 
     public String getVehicle_no() {
         return vehicle_no;
+    }
+
+    public int getTicket() {
+        return ticket;
     }
 }
