@@ -26,7 +26,8 @@
         <activity android:name=".category_wise_availability" />
         <activity android:name=".total_slot_status" />
         <activity android:name=".search" />
-        <activity android:name=".currentParks"></activity>
+        <activity android:name=".currentParks" />
+        <activity android:name=".developers" android:theme="@style/appTheme"></activity>
     </application>
 
 </manifest>

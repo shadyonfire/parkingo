@@ -33,12 +33,25 @@ public class checkout extends Activity {
         vehicle=findViewById(R.id.vehicle);
         tkt_tv=findViewById(R.id.tkt_tv);
 
+
+        Intent i=getIntent();
+        if(i.hasExtra("slot")){
+            slot_no.setText(i.getExtras().get("slot").toString());
+
+            getSlotDetails(null);
+        }
     }
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this,dashboard.class));
-        finish();
+        Intent i=getIntent();
+        if(i.hasExtra("slot")){
+            startActivity(new Intent(this,currentParks.class));
+        }
+        else {
+            startActivity(new Intent(this, dashboard.class));
+            finish();
+        }
         //super.onBackPressed();
     }
 

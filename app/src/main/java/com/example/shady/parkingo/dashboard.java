@@ -40,7 +40,7 @@ public class dashboard extends Activity {
         if(id==R.id.check_in)
                 intent = new Intent(dashboard.this, checkin.class);
         else if(id==R.id.availability)
-                intent = new Intent(dashboard.this, total_slot_status.class);
+                intent = new Intent(dashboard.this, developers.class);
         else if(id==R.id.reprint)
                 intent = new Intent(dashboard.this, ticket.class);
         //else if(id==R.id.search)
