@@ -258,7 +258,7 @@
                     android:paddingTop="0dp"
                     app:cardBackgroundColor="#fff"
                     app:cardElevation="35dp"
-                    android:id="@+id/search"
+                    android:id="@+id/curparks"
                     android:onClick="openNew"
                     >
 
@@ -278,12 +278,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Search"
+                            android:text="Current Parkings"
                             android:textSize="25sp"
                             android:textAllCaps="false"
                             android:textColor="#000"
                             android:textStyle="bold"
-                            android:fontFamily="casual"/>
+                            android:fontFamily="casual"
+                            android:gravity="center"/>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 

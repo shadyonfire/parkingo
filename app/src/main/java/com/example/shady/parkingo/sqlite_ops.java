@@ -2,6 +2,7 @@ package com.example.shady.parkingo;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -101,26 +102,7 @@ public class sqlite_ops extends SQLiteOpenHelper{
         db.close();
         return true;
     }
-    public boolean check_out(checkin_details cd){
-        SQLiteDatabase db= this.getWritableDatabase();
-        Cursor cursor = db.query("records",new String[]{"slot"},"tkt_no"+ "=?",
-                new String[]{String.valueOf(cd.getTicket())}, null, null, null, null);
-        String slot="0";
-        if (cursor != null) {
-            cursor.moveToFirst();
-            if (cursor.getCount() != 0) {
-                slot= cursor.getString(cursor.getColumnIndex("slot"));
-            }
-        }
 
-                String UPDATE_RECORDS="update records set isempty=1 where slot='"+slot+"'";
-        db.execSQL(UPDATE_RECORDS);
-        String UNFILL_SLOT="update records set status=0 where slot='"+slot+"'";
-        db.execSQL(UNFILL_SLOT);
-        Log.d(TAG, "check_in: data inserted");
-        db.close();
-        return true;
-    }
     public ArrayList getFreeSlots(String category){
         String[] cat=new String[]{category.toUpperCase(),"0"};
         ArrayList slots=new ArrayList();
@@ -197,5 +179,94 @@ public class sqlite_ops extends SQLiteOpenHelper{
         db.close();
         return res;
 
+    }
+
+    public ArrayList fetch_ticket_detail(long ticket){
+        ArrayList al=new ArrayList();
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor cr=db.query("records",new String []{"name","mobile","tkt_no","slot","vehicle","check_in"},"tkt_no=?",new String[]{Long.toString(ticket)},null,null,null,null);
+        if(cr!=null){
+            cr.moveToFirst();
+            if(cr.getCount()>0){
+                al.add(0,cr.getString(cr.getColumnIndex("tkt_no")));
+                al.add(1,cr.getString(cr.getColumnIndex("slot")));
+                al.add(2,cr.getString(cr.getColumnIndex("vehicle")));
+                al.add(3,cr.getString(cr.getColumnIndex("check_in")));
+                al.add(4,cr.getString(cr.getColumnIndex("name")));
+                al.add(5,cr.getString(cr.getColumnIndex("mobile")));
+
+            }
+            else{
+                al.add(0,ticket);
+                al.add("none");
+                al.add("none");
+                al.add("none");
+                al.add("none");
+                al.add("none");
+
+            }
+
+        }
+        db.close();
+        return al;
+    }
+    public ArrayList fetch_slot_details(String slot){
+        ArrayList al=new ArrayList();
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor cr=db.query("records",new String []{"name","mobile","tkt_no","slot","vehicle","check_in"},"slot=? and isempty=?",new String[]{slot,"0"},null,null,null,null);
+        if(cr!=null){
+            cr.moveToFirst();
+            if(cr.getCount()>0){
+                al.add(0,cr.getString(cr.getColumnIndex("tkt_no")));
+                al.add(1,cr.getString(cr.getColumnIndex("slot")));
+                al.add(2,cr.getString(cr.getColumnIndex("vehicle")));
+                al.add(3,cr.getString(cr.getColumnIndex("check_in")));
+                al.add(4,cr.getString(cr.getColumnIndex("name")));
+                al.add(5,cr.getString(cr.getColumnIndex("mobile")));
+
+            }
+            else{
+                al.add("none");
+                al.add("none");
+                al.add("none");
+                al.add("none");
+                al.add("none");
+                al.add("none");
+
+            }
+
+        }
+        db.close();
+        return al;
+    }
+    public boolean check_out(String slot,Long tkt){
+        SQLiteDatabase db= this.getWritableDatabase();
+        db.execSQL("update records set check_out=current_timestamp,isempty=1 where tkt_no="+tkt);
+        db.execSQL("update slots set status=0 where slot='"+slot+"'");
+        db.close();
+        return true;
+    }
+
+    public ArrayList getAllFilledSlotDetails(){
+        ArrayList slots=new ArrayList();
+        SQLiteDatabase db= this.getWritableDatabase();
+        Cursor cursor = db.query("records",new String[]{"name","mobile","vehicle","slot"},"isempty=?",
+                new String[]{"0"}, null, null, null, null);
+        if(cursor!=null){
+            cursor.moveToFirst();
+            if(cursor.getCount()!=0){
+                do{
+                    HashMap hm=new HashMap();
+                    hm.put("slot", cursor.getString(cursor.getColumnIndex("slot")));
+                    hm.put("vehicle",cursor.getString(cursor.getColumnIndex("vehicle")));
+                    hm.put("name",cursor.getString(cursor.getColumnIndex("name")));
+                    hm.put("mobile",cursor.getString(cursor.getColumnIndex("mobile")));
+                    slots.add(hm);
+                }while(cursor.moveToNext());
+            }
+
+        }
+        db.close();
+        return slots;
     }
 }

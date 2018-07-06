@@ -122,5 +122,6 @@
         android:textSize="30sp"
         android:textColor="#00f"
         android:text="Print Ticket"
+        android:onClick="Print"
        />
 </LinearLayout>

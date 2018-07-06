@@ -25,7 +25,8 @@
         <activity android:name=".checkout" />
         <activity android:name=".category_wise_availability" />
         <activity android:name=".total_slot_status" />
-        <activity android:name=".search"></activity>
+        <activity android:name=".search" />
+        <activity android:name=".currentParks"></activity>
     </application>
 
 </manifest>

@@ -3,7 +3,9 @@ package com.example.shady.parkingo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -39,5 +41,10 @@ public class ticket extends Activity {
         time_tv.setText(dateandtime[1]);
         vehicle.setText(data.get(2).toString());
 
+    }
+
+    public void Print(View view) {
+        Toast.makeText(this,"Printing Ticket",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this,dashboard.class));
     }
 }
