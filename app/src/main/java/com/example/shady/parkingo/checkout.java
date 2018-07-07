@@ -48,7 +48,7 @@ public class checkout extends Activity {
             getSlotDetails(null);
         }
     }
-
+    //abcdefghijklmnopqrstuvwxyzchecking
     @Override
     public void onBackPressed() {
         Intent i=getIntent();
