@@ -7,7 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,8 +19,10 @@ import static android.content.ContentValues.TAG;
 
 public class checkout extends Activity {
     EditText tkt_no,slot_no;
-    TextView name,mobile,date_tv,slot,vehicle,tkt_tv;
+    TextView name,mobile,date_tv,slot,vehicle,tkt_tv,ischeckedout;
+    Button checkout;
     String slot_number,ticket_number;
+    LinearLayout innerll;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,9 @@ public class checkout extends Activity {
         date_tv=findViewById(R.id.date_tv);
         vehicle=findViewById(R.id.vehicle);
         tkt_tv=findViewById(R.id.tkt_tv);
+        ischeckedout=findViewById(R.id.ischeckedout);
+        checkout=findViewById(R.id.checkout);
+        innerll=findViewById(R.id.innerll);
 
 
         Intent i=getIntent();
@@ -114,9 +121,15 @@ public class checkout extends Activity {
             vehicle.setText(data.get(2).toString());
             mobile.setText(data.get(5).toString());
             tkt_tv.setText(data.get(0).toString());
-
+            String checkout_status=data.get(6).toString();
+            if(checkout_status.equals("1")){
+                ischeckedout.setText("Checked Out!!!");
+                ischeckedout.setVisibility(View.VISIBLE);
+                checkout.setVisibility(View.GONE);
+            }
             slot_number=data.get(1).toString();
             ticket_number=data.get(0).toString();
+            innerll.setVisibility(View.VISIBLE);
         }
     }
 
@@ -135,6 +148,7 @@ public class checkout extends Activity {
 
             slot_number=data.get(1).toString();
             ticket_number=data.get(0).toString();
+            innerll.setVisibility(View.VISIBLE);
         }
     }
 }

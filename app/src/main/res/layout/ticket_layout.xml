@@ -3,66 +3,93 @@
     android:id="@+id/ll"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#fff"
+    android:background="#686868"
+    android:padding="10sp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Parking Ticket"
-        android:textColor="#000"
-        android:textSize="35sp"
-        android:textStyle="bold" />
-    <LinearLayout
-        android:layout_marginTop="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:orientation="vertical"
+        android:background="#fff"
+        android:padding="30sp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Date:"
-            android:textSize="20sp"
+            android:text="Parking Ticket"
             android:textColor="#000"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:elevation="15dp"
             />
         <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---------------------"
+        android:textColor="#000"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        />
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="left"
+        android:orientation="horizontal">
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Date:"
+            android:textColor="#000"
+            android:gravity="left"
+            android:textSize="20sp" />
+
+        <TextView
             android:id="@+id/date_tv"
-            android:text="Date here"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:text="Date here" />
     </LinearLayout>
-    <LinearLayout
+        <LinearLayout
     android:layout_marginTop="5dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:gravity="center">
+    android:gravity="left">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:text="Time:"
         android:textSize="20sp"
         android:textColor="#000"
+
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/time_tv"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"
         android:text="time here"/>
 </LinearLayout>
-    <LinearLayout
+        <LinearLayout
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="left">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+
             android:text="Ticket Number:"
             android:textSize="20sp"
             android:textColor="#000"
@@ -71,18 +98,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/ticket"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
             android:text="ticket number here"/>
     </LinearLayout>
-    <LinearLayout
+        <LinearLayout
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="left">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+
             android:text="Parking Slot:"
             android:textSize="20sp"
             android:textColor="#000"
@@ -91,19 +122,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/slot"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:textColor="#000"
+            android:textSize="20sp"
             android:text="parking slot"/>
     </LinearLayout>
-
-    <LinearLayout
+        <LinearLayout
         android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+
+        android:gravity="left">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:text="Vehicle No:"
             android:textSize="20sp"
             android:textColor="#000"
@@ -112,16 +146,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/vehicle"
+            android:textColor="#000"
+            android:textSize="30sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
             android:text="vehicle number here"/>
+    </LinearLayout>
     </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="30sp"
-        android:textColor="#00f"
+        android:textSize="25sp"
+        android:textColor="#6e9ae1"
+        android:background="#000"
         android:text="Print Ticket"
+        android:padding="10sp"
+        android:layout_marginTop="40dp"
         android:onClick="Print"
        />
 </LinearLayout>

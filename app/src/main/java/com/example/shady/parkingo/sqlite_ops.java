@@ -1,14 +1,10 @@
 package com.example.shady.parkingo;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.v4.widget.ContentLoadingProgressBar;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,12 +14,8 @@ import static android.content.ContentValues.TAG;
 public class sqlite_ops extends SQLiteOpenHelper{
     public static final int DATABASE_VERSION=1;
     public static final String DATABASE_NAME="parkingo.db";
-
     public sqlite_ops(Context context) {
-
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-
-
     }
     public void onCreate(SQLiteDatabase db){
         db.execSQL("create table admin(username varchar unique,password varchar)");
@@ -61,7 +53,7 @@ public class sqlite_ops extends SQLiteOpenHelper{
 
     public boolean fetch_login_details(login li){
         SQLiteDatabase db= this.getReadableDatabase();
-        Log.d(TAG, "fetch_login_details: "+li.getUname()+" "+li.getPass());
+        //Log.d(TAG, "fetch_login_details: "+li.getUname()+" "+li.getPass());
         Cursor cursor = db.query("admin",new String[]{"username","password"},"username"+ "=?",
                 new String[]{li.getUname()}, null, null, null, null);
 
@@ -184,7 +176,7 @@ public class sqlite_ops extends SQLiteOpenHelper{
     public ArrayList fetch_ticket_detail(long ticket){
         ArrayList al=new ArrayList();
         SQLiteDatabase db=this.getWritableDatabase();
-        Cursor cr=db.query("records",new String []{"name","mobile","tkt_no","slot","vehicle","check_in"},"tkt_no=?",new String[]{Long.toString(ticket)},null,null,null,null);
+        Cursor cr=db.query("records",new String []{"name","mobile","tkt_no","slot","vehicle","check_in","isempty"},"tkt_no=?",new String[]{Long.toString(ticket)},null,null,null,null);
         if(cr!=null){
             cr.moveToFirst();
             if(cr.getCount()>0){
@@ -194,6 +186,8 @@ public class sqlite_ops extends SQLiteOpenHelper{
                 al.add(3,cr.getString(cr.getColumnIndex("check_in")));
                 al.add(4,cr.getString(cr.getColumnIndex("name")));
                 al.add(5,cr.getString(cr.getColumnIndex("mobile")));
+                al.add(6,cr.getString(cr.getColumnIndex("isempty")));
+
 
             }
             else{
@@ -203,6 +197,7 @@ public class sqlite_ops extends SQLiteOpenHelper{
                 al.add("none");
                 al.add("none");
                 al.add("none");
+                al.add("0");
 
             }
 
@@ -213,7 +208,7 @@ public class sqlite_ops extends SQLiteOpenHelper{
     public ArrayList fetch_slot_details(String slot){
         ArrayList al=new ArrayList();
         SQLiteDatabase db=this.getWritableDatabase();
-        Cursor cr=db.query("records",new String []{"name","mobile","tkt_no","slot","vehicle","check_in"},"slot=? and isempty=?",new String[]{slot,"0"},null,null,null,null);
+        Cursor cr=db.query("records",new String []{"name","mobile","tkt_no","slot","vehicle","check_in","isempty"},"slot=? and isempty=?",new String[]{slot,"0"},null,null,null,null);
         if(cr!=null){
             cr.moveToFirst();
             if(cr.getCount()>0){
@@ -223,6 +218,8 @@ public class sqlite_ops extends SQLiteOpenHelper{
                 al.add(3,cr.getString(cr.getColumnIndex("check_in")));
                 al.add(4,cr.getString(cr.getColumnIndex("name")));
                 al.add(5,cr.getString(cr.getColumnIndex("mobile")));
+                al.add(6,cr.getString(cr.getColumnIndex("isempty")));
+
 
             }
             else{
@@ -232,6 +229,7 @@ public class sqlite_ops extends SQLiteOpenHelper{
                 al.add("none");
                 al.add("none");
                 al.add("none");
+                al.add("0");
 
             }
 

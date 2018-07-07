@@ -63,20 +63,44 @@
             android:id="@+id/innerll"
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="15dp"
-            android:padding="25dp"
-            android:background="#fff">
+            android:visibility="gone"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:padding="30dp"
+            android:background="#fff"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#f00"
+                android:textSize="30sp"
+                android:id="@+id/ischeckedout"
+                android:visibility="gone"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="details"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="#000"
+                android:textSize="20sp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#000"
+
                     android:text="Ticket: "/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tkt_tv"/>
+                    android:id="@+id/tkt_tv"
+                    android:textColor="#000"
+                    android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,11 +108,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name: "/>
+                    android:text="Name: "
+                    android:textColor="#000"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/name"/>
+                    android:id="@+id/name"
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,11 +124,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Slot: "/>
+                    android:text="Slot: "
+                    android:textColor="#000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/slot"/>
+                    android:id="@+id/slot"
+                    android:textColor="#000"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,11 +138,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="vehicle: "/>
+                    android:text="vehicle: "
+                    android:textColor="#000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/vehicle"/>
+                    android:id="@+id/vehicle"
+                    android:textColor="#000"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -120,11 +152,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date: "/>
+                    android:text="Date: "
+                    android:textColor="#000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/date_tv"/>
+                    android:id="@+id/date_tv"
+                    android:textColor="#000"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -132,11 +166,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mobile: "/>
+                    android:text="Mobile: "
+                    android:textColor="#000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/mobile"/>
+                    android:id="@+id/mobile"
+                    android:textColor="#000"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
