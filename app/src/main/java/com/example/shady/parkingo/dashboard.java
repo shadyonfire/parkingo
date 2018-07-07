@@ -57,6 +57,10 @@ public class dashboard extends Activity {
         if(intent!=null) {
             startActivity(intent);
             //finish();
+            if(id==R.id.logout){
+                finish();
+            }
+
         }
-    }
+            }
 }
