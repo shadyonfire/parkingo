@@ -46,5 +46,6 @@ public class ticket extends Activity {
     public void Print(View view) {
         Toast.makeText(this,"Printing Ticket",Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this,dashboard.class));
+        finish();
     }
 }

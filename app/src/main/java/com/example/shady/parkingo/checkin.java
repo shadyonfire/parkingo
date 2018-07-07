@@ -26,6 +26,7 @@ public class checkin extends Activity {
     public void getslot( View v) {
         Log.d(TAG, "getSlot: going to take result");
         Intent getslot = new Intent(checkin.this, category_wise_availability.class);
+        getslot.putExtra("callingActivity","checkin");
         startActivityForResult(getslot, 1);
     }
 
@@ -64,5 +65,11 @@ public class checkin extends Activity {
         else{
             Toast.makeText(this,"Fields can not be empty",Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this,dashboard.class));
+        finish();
     }
 }

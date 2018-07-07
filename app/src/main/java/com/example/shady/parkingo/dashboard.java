@@ -58,6 +58,7 @@ public class dashboard extends Activity {
             startActivity(intent);
             //finish();
             if(id==R.id.logout){
+                Toast.makeText(this,"Thank You for coming",Toast.LENGTH_SHORT).show();
                 finish();
             }
 

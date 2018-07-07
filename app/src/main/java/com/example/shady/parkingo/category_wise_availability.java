@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,7 +15,7 @@ import android.widget.RadioGroup;
 
 import java.util.ArrayList;
 
-
+import static android.content.ContentValues.TAG;
 
 
 public class category_wise_availability extends Activity {
@@ -86,6 +87,8 @@ public class category_wise_availability extends Activity {
         Intent returnResult=getIntent();
         returnResult.putExtra("result",result);
         setResult(RESULT_OK,returnResult);
-        finish();
+        if(returnResult.hasExtra("callingActivity")) {
+            finish();
+        }
     }
 }
